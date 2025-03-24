@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Call Stack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        #taskPipeline {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="taskName" placeholder="Enter Task Name">
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="undoTask()">Undo Task</button>
+        <h1>Process Line</h1>
+        <div id="taskPipeline">
+         </div>
+         </div>
+    <script>
+        let taskStack = [];
+
+        function updatePipeline() {
+            const pipeline = document.getElementById('taskPipeline');
+            pipeline.innerHTML = taskStack.join('<br>');
+        }
+
+        function addTask() {
+            const taskName = document.getElementById('taskName').value;
+            if (taskName) {
+                taskStack.push(taskName);
+                document.getElementById('taskName').value = '';
+                updatePipeline();
+            }
+        }
+
+        function undoTask() {
+            taskStack.pop();
+            updatePipeline();
+        }
+    </script>
+</body>
+</html>
