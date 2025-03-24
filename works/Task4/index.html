@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        input {
+            width: 300px;
+            font-size: 20px;
+        }
+        button {
+            width: 230px;
+            font-size: 20px;
+        }
+        .button_div {
+            margin-top: 10px;
+        }
+        #container {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="input_div">
+            <input placeholder="Enter the value of X" id="num1" type="number"/>
+            <input placeholder="Enter the value of Y" id="num2" type="number"/>
+            <input placeholder="Result will appear here" id="res" disabled/>
+        </div>
+
+        <div class="button_div">
+            <button onclick="addition()">Addition (X + Y)</button>
+            <button onclick="subtraction()">Subtraction (X - Y)</button>
+            <button onclick="multiplication()">Multiplication (X * Y)</button>
+            <button onclick="division()">Division (X / Y)</button>
+        </div>
+    </div>
+
+    <script>
+        function addition() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                document.getElementById("res").value = num1 + num2;
+            } else {
+                document.getElementById("res").value = "Invalid input";
+            }
+        }
+
+        function subtraction() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                document.getElementById("res").value = num1 - num2;
+            } else {
+                document.getElementById("res").value = "Invalid input";
+            }
+        }
+
+        function multiplication() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                document.getElementById("res").value = num1 * num2;
+            } else {
+                document.getElementById("res").value = "Invalid input";
+            }
+        }
+
+        function division() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                if (num2 === 0) {
+                    document.getElementById("res").value = "Cannot divide by zero";
+                } else {
+                    document.getElementById("res").value = num1 / num2;
+                }
+            } else {
+                document.getElementById("res").value = "Invalid input";
+            }
+        }
+    </script>
+</body>
+</html>

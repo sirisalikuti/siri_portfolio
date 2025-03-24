@@ -1,0 +1,157 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+}
+
+/* Intro Section */
+.intro-section {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    padding: 120px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+}
+
+.intro-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.intro-content p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 0;
+    background: #f0f0f0;
+}
+
+.projects-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+}
+
+.projects-display {
+    display: flex;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projects-sidebar {
+    width: 35%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.projects-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.projects-sidebar::-webkit-scrollbar-thumb {
+    background: #ff6b6b;
+    border-radius: 3px;
+}
+
+.project-card {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+.project-card.active {
+    background: #ff6b6b;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.projects-viewer {
+    width: 65%;
+}
+
+.viewer-box {
+    height: 550px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.viewer-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Bottom Note */
+.bottom-note {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 25px 0;
+}
+
+.bottom-note p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .projects-display {
+        flex-direction: column;
+    }
+    
+    .projects-sidebar, .projects-viewer {
+        width: 100%;
+    }
+    
+    .viewer-box {
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-content h1 {
+        font-size: 3rem;
+    }
+    
+    .intro-content p {
+        font-size: 1.1rem;
+    }
+}

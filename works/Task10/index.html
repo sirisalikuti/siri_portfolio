@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <script>
+        const student = {
+            Name: "Sirichandana Reddy Salikuti",
+            Id : "S00449719",
+            Studying: "MS",
+            Year: "2024-2025",
+            description: function() {
+                return "I am " + this.Name + ", Id " + this.Id +" studying " + this.Studying +  " in the Year " + this.ear;
+            }
+        };
+
+        function show_student_info() {
+            document.getElementById("demo_div").innerHTML = student.description();
+        }
+    </script>
+</head>
+<body>
+    <div id="demo_div"></div>
+    <button onclick="show_student_info()">Show Student Info</button>
+</body>
+</html

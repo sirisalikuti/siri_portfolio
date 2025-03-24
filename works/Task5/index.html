@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function update() {
+                const inputText = document.querySelector('input[placeholder="Input text"]').value;
+                const outputText = inputText.toUpperCase();
+                document.querySelector('input[placeholder="output text"]').value = outputText;
+            }
+        </script>
+    </head>
+    <body>
+        <input placeholder="Input text" onkeyup="update();" />
+        <input placeholder="output text" disabled />
+    </body>
+</html>
